@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: ユーザー名
+        email: Eメール
+    models:
+      post: ポスト
+    attributes:
+      post:
+        description: 説明文
+        image_title: タイトル
+        image: 画像
+    models:
+      item: アイテム
+    attributes:
+      item:
+        brand: ブランド
+        size: サイズ
+        item_image: 画像
+        price: 値段
+        products_name: アイテム名
+        
