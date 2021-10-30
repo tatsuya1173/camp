@@ -1,0 +1,259 @@
+
+/* posts/index ================================ */
+div {
+    display: block;
+  }
+  .posts-index {
+      flex-wrap: wrap;
+      margin-left: -35px;
+      margin-right: -35px;
+      overflow: hidden;
+  }
+  .posts-index-item {
+    position: relative;
+      box-sizing: border-box;
+      margin: 10px;
+      padding-left: 35px;
+      padding-right: 35px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 25px;
+      width: 25%;
+      transition: opacity 0.2s;
+      float: left;
+  }
+  
+  
+  .post-left img {
+    width: 150px;
+    height: 165px;
+    border-radius:5%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
+  
+  .post-user-name a {
+    font-weight: 600;
+  }
+  
+  .post-user-name a:hover {
+    color: #3ecdc6;
+  }
+  
+  .post-left {
+    float: left;
+    width: 10%;
+  }
+  
+  .post-right {
+    float: left;
+    width: 90%;
+    padding-left: 25px;
+    text-align: left;
+  }
+  
+  /* posts/show ================================ */
+  .posts-show form {
+    display: inline;
+  }
+  
+  .posts-show-item {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    overflow: hidden;
+  }
+  
+  .posts-show-item img {
+    width: 250px;
+    height: 250px;
+    border-radius: 1%;
+    vertical-align: middle;
+    object-fit: cover;
+    
+  }
+  
+  .posts-show-item .post-user-name a {
+    vertical-align: middle;
+    font-size: 24px;
+    margin-left: 15px;
+  }
+  
+  .posts-show-item p {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  .main_post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main_post img {
+    height: 300px;
+    width: auto;
+  }
+  
+  .post_user_name {
+    font-family: 'Dotum';
+    background:linear-gradient(transparent 80%, #cecccc 0%);
+    margin-bottom: 10px;
+  }
+  .post_image_title {
+    font-size: 20px;
+    font-weight:bolder;
+  }
+  .post_image_title .description {
+    font-family: 'Dotum';
+  }
+  
+  .post_items{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .heading10 {
+      position: relative;
+      padding-top: 30px;
+      font-size: 26px;
+      border-bottom: 1px solid rgba(5,62,98,1);
+  }
+  
+  .heading10 span {
+      position: relative;
+      z-index: 2;
+  }
+  
+  .heading10::before {
+      content: attr(data-en);
+      position: absolute;
+      top: 0px;
+      left: 0;
+      color: rgba(5,62,98,0.2);
+      font-size: 40px;
+      text-transform: uppercase;
+      z-index: 1;
+  }
+  .itembox {
+      box-sizing: border-box;
+      width:50%;
+      height: 300px;
+  }
+  .itembox img {
+    position: absolute;
+  }
+  .post_items_list {
+    position: relative;
+    top: 50px;
+    left: 270px;
+  }
+  
+  .post-time {
+    color: #8899a6;
+    margin-bottom: 10px;
+  }
+  
+  .postmenus a{
+    position: relative;
+    top: 100px;
+    left: 270px;
+    font-size: 12px;
+    color: #8899a6;
+    text-decoration: underline;
+  }
+  
+  .post-menus a,
+  .post-menus input {
+    color: #8899a6;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  
+  /* posts/new ================================ */
+  .posts-new textarea {
+    font-size: 20px;
+    padding: 10px;
+    min-height: 140px;
+    border: 1px solid rgb(216, 218, 223);
+    resize: none;
+  }
+  
+  .posts-new textarea::-webkit-input-placeholder {
+    font-size: 24px;
+    opacity: 0.5;
+  }
+  
+  /*商品名*/
+  .msr_text_05 {
+    padding-bottom: 20px;
+    width: 460px;
+  }
+  .msr_text_05 label {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 5px;
+  }
+  .msr_text_05 input[type=text] {
+    background: #fff;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 14px;
+    padding: 10px;
+    height: 40px;
+    width: 460px;
+  }
+  
+  /*ファイル選択*/
+  .msr_file_05 {
+    padding-bottom: 20px;
+    width: 460px;
+  }
+  .msr_file_05 label {
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    position: relative;
+    height: 40px;
+    width: 230px;
+  }
+  .msr_file_05 label::before {
+    content: "＋";
+    color: #333333;
+    font-size: 20px;
+    line-height: 1;
+    margin-top: -9px;
+    right: 10px;
+    position: absolute;
+    top: 50%;
+  }
+  .msr_file_05 input[type="file"] {
+    display: none;
+  }
+  /*枠組み*/
+  .form-body {
+    border: 4px double #ddd;
+    margin: 2em 0;
+    padding: 2em;
+  }
+  
+  /*アイテム検索結果ページ*/
+  .item-search img {
+    width: 250px;
+    height: 250px;
+    border-radius: 1%;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  .item-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

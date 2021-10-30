@@ -1,0 +1,23 @@
+<div class="main users-edit">
+    <div class="container">
+        <h2 class="heading10" data-en="Change registration information"><span>登録情報変更</span></h2>
+        <div class="form users-form">
+            <div class="form-body">
+                <% @user.errors.full_messages.each do |message| %>
+                <div class="form-error">
+                    <p style="color:red;"><%= message %></p>
+                </div>
+                <% end %>
+                <div class="change-registration">
+                    <%= form_with model: @user do |form| %>
+                    <p>ユーザー名</p>
+                    <%= form.text_field :name , :value => @user.name %>
+                    <p>メールアドレス</p>
+                    <%= form.text_field :email , :value => @user.email %>
+                    <%= form.submit %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Camp</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap">
+      <h1><%= link_to("CAMP", "/") %></h1>
+
+      <div class="menu">
+        <% if user_signed_in? %>
+        <%= link_to(current_user.name, "/users/show/#{current_user.id}") %>
+        <%= link_to("ユーザー一覧", users_path) %>
+        <%= link_to("新規投稿", "/posts/new") %>
+        <%= link_to("ログアウト", destroy_user_session_path, method: :delete) %>
+        <% else %>
+        <%= link_to("ログイン",new_user_session_path) %>
+        <%= link_to("新規登録", new_user_registration_path) %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <p class="notice" style="color:green;"><%= notice %></p>
+  <p class="alert" style="color:red;"><%= alert %></p>
+
+  <div class="kensaku">
+    <div class="kensaku2">
+      <% if user_signed_in? %>
+      <%= form_with url:search_path, method: :get, local: true do |f| %>
+      <%= f.text_field 'search[value]' %>
+      <%= f.select 'search[model]', options_for_select({ "User" => "user", "Post" => "post","Item" => "item" }) %>
+      <%= f.select 'search[how]', options_for_select({ "完全一致" => "match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical"  }) %>
+      <%= f.submit :"検索" %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= yield %>
+</body>
+
+</html>

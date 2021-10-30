@@ -1,0 +1,65 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <!--投稿表示-->
+      <div class="main_post">
+        <div class="post_user_name">
+          <%= link_to(@user.name, "/users/show/#{@user.id}") %>
+        </div>
+        <% if @post.image.attached? %>
+        <td><%= image_tag @post.image %></td>
+        <% else %>
+        <td><%= image_tag "noimage.png" %></td>
+        <% end %>
+        <div class="post_image_title">
+          <td><%= @post.image_title %></td>
+        </div>
+        <div class="description">
+          <td><%= @post.description %></td>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <!--アイテム表示-->
+      <div class="post_items">
+        <h2 class="heading10" data-en="ITEMS"><span>使用アイテム一覧</span></h2>
+        <% @post.items.each do |item| %>
+        <div class="itembox">
+          <% if item.item_image.attached? %>
+          <td><%= image_tag item.item_image %></td>
+          <% else %>
+          <td><%= image_tag "noimage.png" %></td>
+          <% end %>
+          <br>
+          <div class="post_items_list">
+            <td>アイテム名&emsp;&emsp;
+              <%= item.products_name %></td><br>
+            <td>ブランド名&emsp;&emsp;
+              <%= item.brand %></td><br>
+            <td>サイズ&emsp;&emsp;&emsp;&emsp;
+              <%= item.size %></td><br>
+            <td>価格&emsp;&emsp;&emsp;&emsp;&emsp;&yen;
+              <%= item.price %></td><br>
+          </div>
+
+        </div>
+        <% end %>
+      </div>
+
+      <div class="post-time">
+        <%= @post.created_at.strftime("%Y-%m-%d") %>
+      </div>
+      <% if @post.user_id == current_user.id %>
+      <div class="post-menus">
+        <%= link_to("アイテム登録をする", "/items/new/?post_id=#{@post.id}") %>
+        <%= link_to("投稿編集","/posts/#{@post.id}/edit") %>
+        <%= link_to "投稿削除", post_path(@post),method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+      <% end %>
+      <br>
+      <%= link_to("トップページへ戻る", "/") %>
+      <br>
+    </div>
+  </div>
+</div>

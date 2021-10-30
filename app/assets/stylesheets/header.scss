@@ -1,0 +1,106 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media only screen and (min-width: 800px) {
+    #wrapper {
+      width: 100%;
+    }
+  
+    body {
+      background: white;
+      height: 1500px;
+      padding: 150px;
+      
+    }
+  
+    .header {
+      position:fixed;
+    top:0;
+    z-index:100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      background: white;
+      border-bottom: medium solid rgb(170, 168, 168);
+    }
+  
+    .kensaku{
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .topimage{
+      width: 100%;
+      height: 400px;
+      background-image: image-url('and.png');
+      background-size: cover;
+    }
+    
+    .itemkensaku{
+      width: 65%;
+    }
+    
+    .kensaku .tg {
+    border: 1px solid #999;
+    padding: 3px 5px;
+    border-radius: 20px;
+    height: 2.0em;
+    width: 45px;
+    overflow: hidden;
+    }
+  
+    .tg{
+    cursor: pointer;
+    font-family: FontAwesome;
+    border: none;
+    background: none;
+    color: #3879D9;
+    }
+  
+    .header .wrap {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 69em;
+    }
+  
+    a {
+      color: #181717;
+      text-decoration: none;
+    }
+  
+    .header h1,
+    .header .menu {
+      display: inline-block;
+      position: relative;
+    }
+  
+    .header h1,
+    .header .menu a {
+      line-height: 140px;
+    }
+  
+    .header h1 {
+      float: left;
+      margin: 0;
+      font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    }
+  
+    .header .menu {
+      float: right;
+  
+      a {
+        margin: 0 10px;
+        color: rgb(138, 135, 135);
+        text-decoration: none;
+  
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  

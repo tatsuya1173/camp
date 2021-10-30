@@ -1,0 +1,27 @@
+<div class="header2">
+  <div class="topimage">
+  </div>
+</div>
+<br>
+<br>
+<div class="main posts-index">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <tr>
+          <% if post.image.attached? %>
+              <td><%= image_tag post.image , width: '170px', height: '170px'%></td>
+          <% else %>
+            <td><%= image_tag "noimage.png", width: '170px', height: '170px' %></td>
+          <% end %>
+        </div>
+        <div class="post-right">
+          <td class="posts-index-item"><%= link_to("#{post.image_title}", "/posts/#{post.id}") %></td><br>
+          
+        </div>
+        </tr>
+      </div>
+    <% end %>
+  </div>
+</div>

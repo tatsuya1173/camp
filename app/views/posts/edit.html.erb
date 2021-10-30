@@ -1,0 +1,38 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+
+    <% if @post.errors.any? %>
+    <div class="alert alert-warning">
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+        <li style="color:red"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= form_with model: @post do  |form| %>
+    <div class="form">
+      <div class="form-body">
+        <table class="msr_text_05">
+          <tr>
+            <th><span class="must">必須</span><%= "メイン写真(コーディネート写真)" %></th>
+            <td><%= form.file_field :image , :value => @post.image %></td>
+          </tr>
+          <tr>
+            <th><span class="must">必須</span><%= "タイトル" %></th>
+            <td><%= form.text_field :image_title , :value => @post.image_title %></td>
+          </tr>
+          <tr>
+            <th><span class="must">必須</span><%= "説明" %></th>
+            <td><%= form.text_field :description , :value => @post.description %></td>
+          </tr>
+        </table>
+        <%= form.hidden_field :user_id, :value => current_user.id %>
+        <%= form.submit %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
